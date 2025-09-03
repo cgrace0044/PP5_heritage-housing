@@ -1,42 +1,6 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Heritage Housing Issues
 
-## Template Instructions
-
-Welcome,
-
-This is the Code Institute student template for the Heritage Housing project option in Predictive Analytics. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
-
-You can safely delete the Template Instructions section of this README.md file,  and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
-
-## How to use this repo
-
-1. Use this template to create your GitHub project repo
-
-2. In your new repo click on the green Code button
-
-3. Then, from the Codespaces tab, click Create codespace on main.
-
-5. Wait for the workspace to open. This can take a few minutes.
-
-6. Open a new terminal and `pip3 install -r requirements.txt`
-
-7. Open the jupyter_notebooks directory and click on the notebook you want to open.
-
-8. Click the kernel button and choose Python Environments.
-
-Note that the kernel says Python 3.12.1 as it inherits from the workspace so it will be Python-3.12.1 as installed by Codespaces. To confirm this you can use `! python --version` in a notebook code cell.
-
-## Cloud IDE Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In your Cloud IDE, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with *Regenerate API Key*.
+Analyze how home attributes influence sale price in Ames, Iowa (USA), and build a model to forecast prices for four inherited properties—plus any other Ames home. The project delivers a simple dashboard that visualizes key price drivers and generates predictions from user-entered features.
 
 ## Dataset Content
 
@@ -72,7 +36,7 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 ## Business Requirements
 
-As a good friend, you are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to  help in maximising the sales price for the inherited properties.
+You are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to help in maximising the sales price for the inherited properties.
 
 Although your friend has an excellent understanding of property prices in her own state and residential area, she fears that basing her estimates for property worth on her current knowledge might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might not be the same in Ames, Iowa. She found a public dataset with house prices for Ames, Iowa, and will provide you with that.
 
@@ -81,20 +45,69 @@ Although your friend has an excellent understanding of property prices in her ow
 
 ## Hypothesis and how to validate?
 
-* List here your project hypothesis(es) and how you envision validating it (them).
+* TO BE UPDATED
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
-* List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+* **Business Requirement 1:** Data Visualization and Correlation study
+  * We will inspect the data related to the houses prices in Amnes, Iowa.
+  * We will conduct a correlation study (Pearson and Spearman) to understand better how the variables are correlated to house price.
+  * We will plot the main variables against house price to visualize insights.
+
+* **Business Requirement 2:** Classification/Regression
+  * Build a model to forecast prices for four inherited properties—plus any other Ames, Iowa homes using regression/classification.
 
 ## ML Business Case
 
-* In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+| Question |  |
+|---|---|
+| 1. What are the business objectives? | The client is interested in knowing how house attributes correlate with house price and expects visualisations of this. The client is also interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa. |
+| 2. Is there any business objectives that can be answered with conventional data analysis? | Yes we can use conventional data analysis to discover house pricing patterns in the housing dataset. |
+| 3. Does the client need a dashboard or an API endpoint? | In this case the client has requested a dashboard. |
+| 4. What does the client consider as a successful project outcome? | A running dashboard meeting the business requirements. This includes a study showing the main variables which influence house price and a reliable prediction model of house prices in the Amnes, Iowa area. |
+| 5. Can you breakdown the project into Epics and User Stories? | Yes and these are mapped to the ML life cycle. 1. Information gathering and data collection. 2. Data visualisation, cleaning and preparation. 3. Model training, validation and optimisation. 4. Dashboard planning, designing and development. 5. Dashboard deployment and release.  |
+| 6. Ethical or Privacy concerns? | Not in this case as the client found a public dataset. |
+| 7. Does the data suggest a particular model? | The data suggests a regressor where sales price is the target. |
+| 8. What are the model inputs and intended outputs? | The input is a public dataset with house prices for Ames, Iowa. The output is a prediction of house prices. |
+| 9. What are the criteria for the performance goal of the predictions? | Regressor 0.7 R2 score. This value is a common rule of thumb for regression. |
+| 10. How will the client benefit? | Datadriven insights: the client would like to maximise the sales price on her given inherited properties. |
 
-## Dashboard Design
+## Dashboard Design (Streamlit App User Interface)
 
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items that your dashboard library supports.
-* Eventually, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but eventually you needed to use another plot type)
+### Page 1: Quick project summary
+
+    - Quick project summary
+	- Project Terms & Jargon
+	- Describe Project Dataset
+	- State Business Requirements
+
+### Page 2: House Prices Study
+
+    - Before the analysis, we knew we wanted this page to answer business requirement 1, but we couldn't know in advance which plots would need to be displayed.
+    - After data analysis, we agreed with stakeholders that the page will: 
+    	- State business requirement 1
+    	- Checkbox: data inspection on house prices (display the number of rows and columns in the data, and display the first ten rows of the data)
+    	- Display the most correlated variables to house price and the conclusions
+    	- Checkbox: Individual plots showing the house price levels for each correlated variable
+
+### Page 3: Prediction of House Prices
+- State business requirement 2
+- Set of widgets inputs, which relates to the prospect profile. Each set of inputs is related to a given ML task to predict prospect Churn, Tenure and Cluster.
+- "Run predictive analysis" button that serves the prospect data to our ML pipelines and predicts if the prospect will churn or not, if so, when. It also shows to which cluster the prospect belongs and the cluster's profile. For the churn and tenure predictions, the page will inform the associated probability for churning and tenure level.
+
+### Page 4: Project Hypothesis and Validation
+- Before the analysis, we knew we wanted this page to describe each project hypothesis, the conclusions, and how we validated each. After the data analysis, we can report that:
+- 1 - We suspect house prices are are churning with low tenure levels
+	- Correct. The correlation study at Churned Customer Study supports that.
+- 2 -  A customer survey showed our customers appreciate Fibre Optic.
+	- A churned user typically has Fiber Optic, as demonstrated by a Churned Customer Study. The insight will be taken to the survey team for further discussions and investigations.
+
+### Page 5: Predict Sales price
+
+  * Considerations and conclusions after the pipeline is trained.
+* Present ML pipeline steps
+* Feature importance
+- Pipeline performance
 
 ## Unfixed Bugs
 
