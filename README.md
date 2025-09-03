@@ -74,47 +74,54 @@ Although your friend has an excellent understanding of property prices in her ow
 
 ## Dashboard Design (Streamlit App User Interface)
 
-### Page 1: Quick project summary
+### Page 1: Quick Project Summary
 
-    - Quick project summary
-	- Project Terms & Jargon
-	- Describe Project Dataset
-	- State Business Requirements
+* Quick project summary  
+* Project terms & jargon  
+* Describe project dataset  
+* State business requirements  
+
+---
 
 ### Page 2: House Prices Study
 
-    - Before the analysis, we knew we wanted this page to answer business requirement 1, but we couldn't know in advance which plots would need to be displayed.
-    - After data analysis, we agreed with stakeholders that the page will: 
-    	- State business requirement 1
-    	- Checkbox: data inspection on house prices (display the number of rows and columns in the data, and display the first ten rows of the data)
-    	- Display the most correlated variables to house price and the conclusions
-    	- Checkbox: Individual plots showing the house price levels for each correlated variable
+* Before the analysis, we knew we wanted this page to answer Business Requirement 1, but we couldn’t know in advance which plots would need to be displayed.  
+* After data analysis, we agreed with stakeholders that the page will:  
+  * State Business Requirement 1  
+  * **Checkbox:** Data inspection on house prices (display the number of rows and columns in the data, and display the first ten rows of the data)  
+  * Display the most correlated variables to house price and the conclusions  
+  * **Checkbox:** Individual plots showing the house price levels for each correlated variable  
+
+---
 
 ### Page 3: Prediction of House Prices
 
 * **Business Requirement 2**  
-  Define the second business requirement related to predicting house prices.
+  Define the second business requirement related to predicting house prices.  
 
 * **Widget Inputs**  
-  Provide a set of input fields describing the house for which the price prediction is required.
+  Provide a set of input fields describing the house for which the price prediction is required.  
 
 * **Run Predictive Analysis Button**  
   Uses the entered data to run the ML pipeline and:  
-  * Predict the price of the specified house.
+  * Predict the price of the specified house.  
+
+---
 
 ### Page 4: Project Hypothesis and Validation
 
-* Before the analysis, we knew we wanted this page to describe each project hypothesis, the conclusions, and how we validated each. After the data analysis, we can report that:
-* 1 - TO BE UPDATED
+* Before the analysis, we knew we wanted this page to describe each project hypothesis, the conclusions, and how we validated each. After the data analysis, we can report that:  
+  * **1 – TO BE UPDATED**  
+  * **2 – TO BE UPDATED**  
 
-* 2 - TO BE UPDATED
+---
 
-### Page 5: Predict Sales price
+### Page 5: Predict Sales Price
 
-* Considerations and conclusions after the pipeline is trained.
-* Present ML pipeline steps
-* Feature importance
-* Pipeline performance
+* Considerations and conclusions after the pipeline is trained  
+* Present ML pipeline steps  
+* Feature importance  
+* Pipeline performance  
 
 ## Unfixed Bugs
 
